@@ -8,6 +8,10 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'), // hangi dizin altına uygulama dağıtım için çıkırılacak.
 	},
 	mode: 'development',
+	devServer: {
+		// uygulamadaki linkleri tarayıcıdan değiştirip çalıştırıdğımızda path karşılığında sayfalar bulunamayıp 404 hatası veriyor. Bunu engelleyip sayfaların doğru yönlendirilmesi için bu ayarı aktif hale getirdik. tarayıcının history geçmiş bilgisini aktif hale getirdik.
+		historyApiFallback: true,
+	},
 	module: {
 		rules: [
 			{
