@@ -10,6 +10,8 @@ function Layout() {
 					<Link to="/">Anasayfa</Link>
 					<br></br>
 					<Link to="/about">About Page</Link>
+					<br></br>
+					<Link to="/admin/users">Users</Link>
 				</nav>
 			</header>
 			<hr></hr>

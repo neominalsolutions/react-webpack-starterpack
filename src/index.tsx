@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
+import App from './components/app.component';
 
 import HomePage from './pages/home.page';
 import {
@@ -10,7 +10,8 @@ import {
 	RouterProvider,
 } from 'react-router-dom';
 import AboutPage from './pages/about.page';
-import Layout from './components/layout';
+import Layout from './components/layout.component';
+import UsersPage from './pages/users.page';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
 				<Outlet />
 			</div>
 		),
-		children: [{ path: '', element: <p>Admin Home</p> }],
+		children: [{ path: 'users', Component: UsersPage }],
 	},
 	{
 		path: '*',
