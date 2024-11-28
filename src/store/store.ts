@@ -2,10 +2,12 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import { cartReducers } from './slices/cart.slice';
+import { productReducer } from './slices/product.slice';
 
 export const store = configureStore({
 	reducer: {
 		cartState: cartReducers, // cartStatelerden cartReducer sorumlu olsun
+		productState: productReducer,
 	},
 });
 

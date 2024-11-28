@@ -11,18 +11,20 @@ import {
 // ürünleri state eklemek için kullanılan component
 const ProductList: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
+	// productState şuan bu kısımda Redux üzerinde oluşması lazım.
+	const productState = useSelector((store: RootState) => store.productState);
 
-	const plist = [
-		{ id: 1, name: 'ürün-1', price: 15 },
-		{ id: 2, name: 'ürün-2', price: 25 },
-		{ id: 3, name: 'ürün-3', price: 100 },
-		{ id: 4, name: 'ürün-4', price: 125 },
-		{ id: 5, name: 'ürün-5', price: 180 },
-	];
+	// const plist = [
+	// 	{ id: 1, name: 'ürün-1', price: 15 },
+	// 	{ id: 2, name: 'ürün-2', price: 25 },
+	// 	{ id: 3, name: 'ürün-3', price: 100 },
+	// 	{ id: 4, name: 'ürün-4', price: 125 },
+	// 	{ id: 5, name: 'ürün-5', price: 180 },
+	// ];
 
 	return (
 		<>
-			{plist.map((item: any) => {
+			{productState.products.map((item: any) => {
 				return (
 					<div key={item.id}>
 						<div>

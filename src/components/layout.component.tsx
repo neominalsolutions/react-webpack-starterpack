@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 import { AppDispatch } from '../store/store';
 import { loadFromStorage } from '../store/slices/cart.slice';
+import { productFetch } from '../store/slices/product.slice';
 
 function Layout() {
 	const dispatch = useDispatch<AppDispatch>();
@@ -11,6 +12,7 @@ function Layout() {
 	// uygulama ilk ayağa kalktığında git localstoragedan client state yükle
 	useEffect(() => {
 		dispatch(loadFromStorage());
+		dispatch(productFetch());
 	}, []);
 
 	return (
