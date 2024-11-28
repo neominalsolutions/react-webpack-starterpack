@@ -1,8 +1,18 @@
 import { Container } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
+import { AppDispatch } from '../store/store';
+import { loadFromStorage } from '../store/slices/cart.slice';
 
 function Layout() {
+	const dispatch = useDispatch<AppDispatch>();
+
+	// uygulama ilk ayağa kalktığında git localstoragedan client state yükle
+	useEffect(() => {
+		dispatch(loadFromStorage());
+	}, []);
+
 	return (
 		<>
 			<header>
