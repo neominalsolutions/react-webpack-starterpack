@@ -8,6 +8,7 @@ import {
 	RouterProvider,
 } from 'react-router-dom';
 import Layout from './components/layout.component';
+import FormSamplePage from './pages/form.sample.page';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
 	{
 		path: '/',
 		Component: Layout,
-		children: [],
+		children: [{ path: 'forms', Component: FormSamplePage }],
 	},
 ]);
 

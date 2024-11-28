@@ -5,13 +5,17 @@ function Layout() {
 	return (
 		<>
 			<header>
-				<h1>Banner</h1>
+				<h1>Başlık</h1>
 				<nav>
-					<Link to="/">Anasayfa</Link>
+					<Link to="/forms">Forms</Link>
 					<br></br>
-					<Link to="/about">About Page</Link>
+					<Link to="/useReducer">Use Reducer</Link>
 					<br></br>
-					<Link to="/admin/users">Users</Link>
+					<Link to="/contextApi">Context API</Link>
+					<br></br>
+					<Link to="/swr">SWR</Link>
+					<br></br>
+					<Link to="/redux">Redux</Link>
 				</nav>
 			</header>
 			<hr></hr>
