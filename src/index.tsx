@@ -15,6 +15,7 @@ import { ThemeProvider } from './contexts/theme.context';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import ReduxSamplePage from './pages/redux.sample.page';
+import SwrSamplePage from './pages/swr.sample.page';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
 			{ path: 'useReducer', Component: UseReducerPage },
 			{ path: 'contextApi', Component: UseContextPage },
 			{ path: 'redux', Component: ReduxSamplePage },
+			{ path: 'swr', Component: SwrSamplePage },
 		],
 	},
 ]);
