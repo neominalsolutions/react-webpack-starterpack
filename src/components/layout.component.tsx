@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
@@ -20,9 +21,10 @@ function Layout() {
 			</header>
 			<hr></hr>
 
-			<main>
+			<Container maxWidth="sm">
 				<Outlet />
-			</main>
+			</Container>
+
 			<hr></hr>
 
 			<footer>Alt Bilgi</footer>

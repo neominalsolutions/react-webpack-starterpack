@@ -2,6 +2,7 @@ import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { registerSchema } from '../schemas/register.schema';
+import { Box, Button, TextField } from '@mui/material';
 
 function FormSamplePage() {
 	const {
@@ -27,10 +28,28 @@ function FormSamplePage() {
 	return (
 		<>
 			<form onSubmit={handleSubmit(onFormSubmit)}>
-				<input {...register('email')} placeholder="email" />
+				<Box sx={{ padding: 1 }}>
+					<TextField
+						{...register('email')}
+						id="standard-basic"
+						label="email"
+						variant="outlined"
+					/>
+				</Box>
+
+				{/* <input {...register('email')} placeholder="email" /> */}
 				{errors.email && <span>{errors.email.message}</span>}
 				<br></br>
-				<input {...register('password')} placeholder="pass" />
+				<Box sx={{ padding: 1 }}>
+					<TextField
+						{...register('password')}
+						id="standard-basic"
+						label="password"
+						variant="outlined"
+					/>
+				</Box>
+
+				{/* <input {...register('password')} placeholder="pass" /> */}
 				{errors.password && <span>{errors.password.message}</span>}
 				<br></br>
 				<input {...register('confirmPassword')} placeholder="confirm" />
@@ -56,9 +75,12 @@ function FormSamplePage() {
 				)}
 				<br></br>
 				<input type="submit" value="Send" />
-				<button disabled={!isValid} onClick={() => reset()}>
+				<Button disabled={!isValid} onClick={() => reset()} variant="contained">
 					Reset
-				</button>
+				</Button>
+				{/* <button disabled={!isValid} onClick={() => reset()}>
+					Reset
+				</button> */}
 			</form>
 		</>
 	);
